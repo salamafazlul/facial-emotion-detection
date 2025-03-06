@@ -6,28 +6,26 @@ This project focuses on building a human emotion recognition model using Convolu
 ## Project Overview
 The human emotion recognition model classifies emotions into seven categories: Angry, Disgust, Fear, Happy, Neutral, Sad, and Surprise. The model is trained using a large dataset of labeled images and then deployed as a web application using Streamlit, allowing users to upload an image and receive emotion predictions in real-time.
 
-## Project Steps
-
-### 1. Demo & Functionality
+## Features & Functionality
 - The model takes an image path as input.
-- It predicts the emotion in the image.
-- The predicted emotion is displayed along with the image.
-- The dataset includes seven emotions: Angry, Disgust, Fear, Happy, Neutral, Sad, and Surprise.
-- The accuracy is tested on a <a href="https://github.com/salamafazlul/facial-emotion-detection/tree/main/test_images"> sample dataset</a>.
+- Predicts and displays the detected emotion.  
+- Supports real-time emotion recognition.  
+- Utilizes a dataset with seven emotion categories.  
+- Tested for accuracy using a **[sample dataset](https://github.com/salamafazlul/facial-emotion-detection/tree/main/test_images)**.
 
-### 2. Data Preprocessing
-- The dataset consists of training and validation images, stored in respective folders.
-- Each image is labeled based on its emotion.
-- Libraries used:
-  - TensorFlow
-  - NumPy
-  - OpenCV (cv2)
-  - Matplotlib
-  - Streamlit
-- The dataset contains 28,000 images for training and 7,000 images for validation.
-- Images are loaded into arrays and stored for model training.
+## Technologies Used  
+- **Programming:** Python  
+- **Libraries:** TensorFlow, NumPy, OpenCV, Matplotlib  
+- **Framework:** Streamlit (for web deployment)  
+- **Model Training:** Keras Sequential API  
+- **Data Handling:** Pandas  
 
-### 3. Model Architecture
+## Data Preprocessing  
+- The dataset consists of **28,000 training images** and **7,000 validation images**.  
+- Each image is labeled based on its emotion.  
+- Images are converted into arrays for model training.
+
+## Model Architecture
 The CNN model is built using the Keras Sequential API with the following layers:
 - **Convolutional Layers (Conv2D):** Extract features from images.
 - **Batch Normalization:** Normalizes activations for stable training.
@@ -39,14 +37,25 @@ The CNN model is built using the Keras Sequential API with the following layers:
 - **Loss Function:** Categorical Cross-Entropy
 - **Evaluation Metric:** Accuracy
 
-### 4. Model Training
+## Model Training
 - The model is trained using 28,000 training images and validated on 7,000 validation images.
 - **Batch size:** 128
 - **Epochs:** 50 (each epoch takes about 6 minutes to run)
 - The trained model is saved to avoid retraining every time.
 
-### 5. Model Deployment as a Web Application
+## Model Deployment as a Web Application
 - The model is deployed using **Streamlit**, a Python framework for web apps.
 - The user uploads an image via the web app.
 - The model predicts the emotion and displays the image alongside the result.
 - The application supports real-time emotion recognition.
+
+## Results  
+- **Angry → Correct**  
+- **Happy → Correct**  
+- **Neutral → Correct**  
+- **Sad → Incorrectly predicted as Fear** *(due to similar facial expressions)*  
+- **Overall Accuracy:** ~75% on sample images  
+
+## App Screenshot
+![App Screenshot](https://github.com/salamafazlul/facial-emotion-detection/blob/main/cover.png)
+
